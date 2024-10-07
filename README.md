@@ -1,12 +1,12 @@
 <div id="top" align="center">
-<h1>GH Repo Template</h1>
+<h1>cxx_libs</h1>
 
-<p>Template for new Github repos</p>
+<p>C++ libraries, mostly c++20</p>
 
-[Report Issue](https://github.com/Zheng-Bote/repo-template/issues) [Request Feature](https://github.com/Zheng-Bote/repo-template/pulls)
+[Report Issue](https://github.com/Zheng-Bote/cxx_libs/issues) [Request Feature](https://github.com/Zheng-Bote/cxx_libs/pulls)
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-![GitHub Created At](https://img.shields.io/github/created-at/Zheng-Bote/repo-template)
+![GitHub Created At](https://img.shields.io/github/created-at/Zheng-Bote/cxx_libs)
 
 </div>
 
@@ -14,10 +14,11 @@
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 **Table of Contents**
 
 - [Description](#description)
-    - [Features](#features)
+  - [Features](#features)
   - [Status](#status)
     - [Application / Tool](#application--tool)
     - [Documentation](#documentation)
@@ -57,23 +58,15 @@
 
 ![QT](https://img.shields.io/badge/Community-6-41CD52?logo=qt)
 ![CXX](https://img.shields.io/badge/C++-20-blue?logo=cplusplus)
-![Rust](https://img.shields.io/badge/Rust-Rocket-lightgrey?logo=rust)
-![Expressif](https://img.shields.io/badge/ESP-32-E7352C?logo=espressif)
-![GHA](https://img.shields.io/badge/Github-Action-black?logo=githubactions)
-![Node](https://img.shields.io/badge/Node-20-blue?logo=tsnode)
-![Angular](https://img.shields.io/badge/Angular-18+-red?logo=angular)
-![Vue](https://img.shields.io/badge/Vue-3+-4FC08D?logo=vuedotjs)
-![HTML5](https://img.shields.io/badge/HTML-5+-E34F26?logo=html5)
-![Typescript](https://img.shields.io/badge/TypeScript-5+-3178C6?logo=typescript)
 
-Repo template with README-template and some Github workflows and Github actions.
+C++20 libraries and some Github workflows and Github actions.
 
 ### Features
 
 - \[ ] advanced-super-extra-special feature xyz
 
   <br>
-  
+
 - \[x] OSS and license
 - \[x] works as designed
 - \[ ] no bugs
@@ -83,7 +76,7 @@ Repo template with README-template and some Github workflows and Github actions.
 - \[x] some more or less usefull Github Actions for GH-repo, GH-pages, GH-wiki, CI/CD-Pipelines
 - \[ ] Packagemanager
 - \[ ] Installation routine
-- \[ ] portable application 
+- \[ ] portable application
 
 <br>
 
@@ -94,7 +87,6 @@ Repo template with README-template and some Github workflows and Github actions.
 - \[ ] runs on Android
 - \[ ] runs on HarmonyOS
 
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Status
@@ -102,25 +94,26 @@ Repo template with README-template and some Github workflows and Github actions.
 ### Application / Tool
 
 ![Status](https://img.shields.io/badge/Status-under_construction-red)
-![Status](https://img.shields.io/badge/Status-works-green)
-![GitHub Release Date](https://img.shields.io/github/release-date/Zheng-Bote/repo-template)
 
-![GitHub Issues](https://img.shields.io/github/issues/Zheng-Bote/repo-template)
-![GitHub Pull Requests](https://img.shields.io/github/issues-pr/Zheng-Bote/repo-template)
+![GitHub Release Date](https://img.shields.io/github/release-date/Zheng-Bote/cxx_libs)
+
+![GitHub Issues](https://img.shields.io/github/issues/Zheng-Bote/cxx_libs)
+![GitHub Pull Requests](https://img.shields.io/github/issues-pr/Zheng-Bote/cxx_libs)
 
 ### Documentation
 
-_see also:_ [Application Documentation](#documentation) 
+_see also:_ [Application Documentation](#documentation)
 
 #### README
-[![Repo - create Repo-Tree in README.md](https://github.com/Zheng-Bote/repo-template/actions/workflows/repo-create_tree_readme.yml/badge.svg)](https://github.com/Zheng-Bote/repo-template/actions/workflows/repo-create_tree_readme.yml)
-[![Repo - add Actions In/Out to README](https://github.com/Zheng-Bote/repo-template/actions/workflows/repo-actions_docu.yml/badge.svg)](https://github.com/Zheng-Bote/repo-template/actions/workflows/repo-actions_docu.yml)
 
-[![Repo - update Readme](https://github.com/Zheng-Bote/repo-template/actions/workflows/repo-call_Readme.yml/badge.svg)](https://github.com/Zheng-Bote/repo-template/actions/workflows/repo-call_Readme.yml)
+[![Repo - create Repo-Tree in README.md](https://github.com/Zheng-Bote/cxx_libs/actions/workflows/repo-create_tree_readme.yml/badge.svg)](https://github.com/Zheng-Bote/cxx_libs/actions/workflows/repo-create_tree_readme.yml)
+[![Repo - add Actions In/Out to README](https://github.com/Zheng-Bote/cxx_libs/actions/workflows/repo-actions_docu.yml/badge.svg)](https://github.com/Zheng-Bote/cxx_libs/actions/workflows/repo-actions_docu.yml)
+
+[![Repo - update Readme](https://github.com/Zheng-Bote/cxx_libs/actions/workflows/repo-call_Readme.yml/badge.svg)](https://github.com/Zheng-Bote/cxx_libs/actions/workflows/repo-call_Readme.yml)
 
 #### other Markdown files
 
-[![Repo - create TOC of Markdown files](https://github.com/Zheng-Bote/repo-template/actions/workflows/repo-create_doctoc_md.yml/badge.svg)](https://github.com/Zheng-Bote/repo-template/actions/workflows/repo-create_doctoc_md.yml)
+[![Repo - create TOC of Markdown files](https://github.com/Zheng-Bote/cxx_libs/actions/workflows/repo-create_doctoc_md.yml/badge.svg)](https://github.com/Zheng-Bote/cxx_libs/actions/workflows/repo-create_doctoc_md.yml)
 
 create ToC in Markdown files in folders
 
@@ -142,6 +135,7 @@ bla bla ... with a little help from my friends
 ## folder structure
 
 <!-- readme-tree start -->
+
 ```
 .
 ├── .github
@@ -173,6 +167,7 @@ bla bla ... with a little help from my friends
 
 5 directories, 21 files
 ```
+
 <!-- readme-tree end -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -334,12 +329,6 @@ pie title me
 
 ## License
 
-**This Repo-Template is using the MIT-License**
-
-**_other licenses see files `LICENSE_<name>`\_**
-
-### MIT License
-
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
 Copyright (c) 2024 ZHENG Robert
@@ -359,26 +348,7 @@ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-        https://choosealicense.com/licenses/mit/
-
-### Apache License
-
-[![Apache License](https://img.shields.io/badge/License-Apache_v2.0-green.svg)](<[https://choosealicense.com/licenses/mit/](http://www.apache.org/licenses/LICENSE-2.0)>)
-
-Copyright (c) 2019 ZHENG Robert
-
-Licensed under the **Apache License, Version 2.0** (the "License"); you may not use this file except in compliance with the License.
-
-You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-
-See the License for the specific language governing permissions and limitations under the License.
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Authors
 
@@ -386,7 +356,7 @@ See the License for the specific language governing permissions and limitations 
 
 ### Code Contributors
 
-![Contributors](https://img.shields.io/github/contributors/Zheng-Bote/repo-template?color=dark-green)
+![Contributors](https://img.shields.io/github/contributors/Zheng-Bote/cxx_libs?color=dark-green)
 
 [![Zheng Robert](https://img.shields.io/badge/Github-Zheng_Robert-black?logo=github)](https://www.github.com/Zheng-Bote)
 

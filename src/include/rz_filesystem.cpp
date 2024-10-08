@@ -5,7 +5,7 @@
  * @version 2.0.0
  * @date 2023-03-24
  *
- * @copyright Copyright (c) ZHENG Robert 2023
+ * @copyright Copyright (c) 2023 ZHENG Robert
  *
  */
 
@@ -15,11 +15,6 @@
  * @brief Filesystem::Filesystem
  */
 Filesystem::Filesystem() {}
-
-/**
- * @brief Filesystem::~Filesystem
- */
-Filesystem::~Filesystem() {}
 
 /**
  * @brief Filesystem::createDirectory
@@ -351,6 +346,18 @@ std::string Filesystem::getFilePermission(const std::filesystem::path &file)
     (p & std::filesystem::perms::others_write) != std::filesystem::perms::none ? f_perms.others_write = "w" : f_perms.others_write = "-";
     (p & std::filesystem::perms::others_exec) != std::filesystem::perms::none ? f_perms.others_execute = "x" : f_perms.others_execute = "-";
     return (f_perms.owner_read + f_perms.owner_write + f_perms.owner_execute + f_perms.group_read + f_perms.group_write + f_perms.group_execute + f_perms.others_read + f_perms.others_write + f_perms.others_execute);
+}
+
+/**
+ * @brief Filesystem::getLastWriteTime
+ *
+ * @param file
+ * @return std::string
+ */
+std::string Filesystem::getLastWriteTime(const std::filesystem::path &file)
+{
+    auto ftime = std::filesystem::last_write_time(file);
+    return std::format("{0:%F}T{0:%R%z}", ftime);
 }
 
 /**

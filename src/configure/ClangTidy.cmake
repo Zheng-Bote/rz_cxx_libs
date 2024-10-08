@@ -1,5 +1,4 @@
 function(AddClangTidy target)
-message("this is tidy")
   find_program(CLANG-TIDY_PATH clang-tidy REQUIRED)
   set_target_properties(
     ${target} PROPERTIES CXX_CLANG_TIDY

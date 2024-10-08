@@ -5,7 +5,7 @@
  * @version 2.0.0
  * @date 2023-03-24
  *
- * @copyright Copyright (c) ZHENG Robert 2023
+ * @copyright Copyright (c)2023 ZHENG Robert
  *
  */
 
@@ -14,6 +14,7 @@
 #include <filesystem>
 #include <format>
 #include <iostream>
+#include <chrono>
 
 /**
  * @brief The Filesystem class
@@ -22,7 +23,6 @@ class Filesystem
 {
 public:
   Filesystem();
-  ~Filesystem();
 
   // directories
   bool createDirectory(const std::filesystem::path &p) noexcept;
@@ -45,6 +45,7 @@ public:
                           const std::filesystem::path &dest) noexcept;
   bool isFile(const std::filesystem::path &p);
   std::string getFilePermission(const std::filesystem::path &file);
+  std::string getLastWriteTime(const std::filesystem::path &file);
 
   // mixed
   std::string getAbsolutePath(const std::filesystem::path &p);

@@ -1,5 +1,4 @@
 function(Doxygen input output)
-message("this is doxy")
   find_package(Doxygen)
   if (NOT DOXYGEN_FOUND)
     add_custom_target(doxygen COMMAND false

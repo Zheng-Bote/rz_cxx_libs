@@ -17,6 +17,7 @@
 
 #include "configured/rz_config.h"
 #include "include/rz_filesystem.h"
+#include "include/rz_datetime.h"
 
 /**
  * @brief main
@@ -54,8 +55,14 @@ int main(int argc, char *argv[])
     // fs.getRelativePath("/tmp");
     // fs.calculateDirectorySize(".");
     // fs.printDiskSpaceInfo("/home", 20);
-    std::cout << "perm: " << fs.getFilePermission("./qt_filesystem") << std::endl;
-    ;
+    // std::cout << "perm: " << fs.getFilePermission("./qt_filesystem") << std::endl;
+    std::cout << "ftime: " << fs.getLastWriteTime("./test_libs") << std::endl;
 
+    std::cout << "###################\n";
+    DateTime dt;
+    dt.getUtcDateTime();
+    dt.getLocalTime();
+    std::cout << "###################\n";
+    std::cout << "human dt: " << dt.currentDateTime("human") << std::endl;
     EXIT_SUCCESS;
 }

@@ -18,6 +18,7 @@
 #include "configured/rz_config.h"
 #include "include/rz_filesystem.h"
 #include "include/rz_datetime.h"
+#include "include/rz_cxx_features.h"
 
 /**
  * @brief main
@@ -38,31 +39,40 @@ int main(int argc, char *argv[])
     std::cout << PROG_NAME << " v" << PROG_VERSION << " " << PROG_HOMEPAGE << "\n"
               << std::endl;
 
-    Filesystem fs;
-    // fs->createDirectory("/tmp/test");
-    // std::filesystem::path temp_dir = std::filesystem::temp_directory_path();
-    // fs.createDirectories(temp_dir.append("test/test1/test2/test3"));
-    // fs->removeDirectory("/tmp/test/test1/test2");
-    // fs->removeDirectories("/tmp/test");
-    // fs.listDirectory("/tmp");
-    // fs.listDirectories("/tmp", 1);
-    // fs.copyFile("qt_filesystem", "/tmp/test/test1/test2/test3/rz__filesystem");
-    // fs.copyRecursive(".", "/tmp/test");
-    // fs.showDirectoryTree("/tmp/test");
-    // fs.isDirectory("/tmp");
-    // fs.isFile("qt_filesysteme");
-    // fs.getAbsolutePath(".");
-    // fs.getRelativePath("/tmp");
-    // fs.calculateDirectorySize(".");
-    // fs.printDiskSpaceInfo("/home", 20);
-    // std::cout << "perm: " << fs.getFilePermission("./qt_filesystem") << std::endl;
-    std::cout << "ftime: " << fs.getLastWriteTime("./test_libs") << std::endl;
+    // Filesystem fs;
+    //  fs->createDirectory("/tmp/test");
+    //  std::filesystem::path temp_dir = std::filesystem::temp_directory_path();
+    //  fs.createDirectories(temp_dir.append("test/test1/test2/test3"));
+    //  fs->removeDirectory("/tmp/test/test1/test2");
+    //  fs->removeDirectories("/tmp/test");
+    //  fs.listDirectory("/tmp");
+    //  fs.listDirectories("/tmp", 1);
+    //  fs.copyFile("qt_filesystem", "/tmp/test/test1/test2/test3/rz__filesystem");
+    //  fs.copyRecursive(".", "/tmp/test");
+    //  fs.showDirectoryTree("/tmp/test");
+    //  fs.isDirectory("/tmp");
+    //  fs.isFile("qt_filesysteme");
+    //  fs.getAbsolutePath(".");
+    //  fs.getRelativePath("/tmp");
+    //  fs.calculateDirectorySize(".");
+    //  fs.printDiskSpaceInfo("/home", 20);
+    //  std::cout << "perm: " << fs.getFilePermission("./qt_filesystem") << std::endl;
+    //  std::cout << "last write time UTC: " << fs.getLastWriteTime("./test_libs") << std::endl;
+    //  fs.getFileSizeHuman("./test_libs");
+    // DateTime dt;
+    // std::cout << "main UTC sys: " << dt.getUtcDateTimeSys() << std::endl;
+    // std::cout << "main UTC human: " << dt.getUtcDateTimeHuman() << std::endl;
+    // std::cout << "main local sys: " << dt.getLocalTimeSys() << std::endl;
+    // std::cout << "main human: " << dt.getLocalTimeHuman() << std::endl;
+    // std::cout << "current TZ: " << dt.getCurrentZoneOffset() << std::endl;
 
     std::cout << "###################\n";
-    DateTime dt;
-    dt.getUtcDateTime();
-    dt.getLocalTime();
+
+    if (cxx_features::print.cxx20 && cxx_features::print.core_features)
+        cxx_features::show("C++20 CORE", cxx_features::cxx20);
+
+    // std::cout << "This code is compiled with G++ version: " << __GNUC__ << "." << __GNUC_MINOR__ << "." << __GNUC_PATCHLEVEL__ << std::endl;
     std::cout << "###################\n";
-    std::cout << "human dt: " << dt.currentDateTime("human") << std::endl;
+
     EXIT_SUCCESS;
 }

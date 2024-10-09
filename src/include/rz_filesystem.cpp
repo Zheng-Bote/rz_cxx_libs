@@ -352,12 +352,41 @@ std::string Filesystem::getFilePermission(const std::filesystem::path &file)
  * @brief Filesystem::getLastWriteTime
  *
  * @param file
- * @return std::string
+ * @return std::string (UTC, eg 2024-10-09T07:41+0000)
  */
 std::string Filesystem::getLastWriteTime(const std::filesystem::path &file)
 {
+    // std::setlocale(LC_TIME, "de_DE.UTF-8");
     auto ftime = std::filesystem::last_write_time(file);
     return std::format("{0:%F}T{0:%R%z}", ftime);
+}
+
+/**
+ * @brief Filesystem::showFileSizeHuman
+ *
+ * @param file
+ */
+void Filesystem::showFileSizeHuman(const std::filesystem::path &file) noexcept
+{
+    try
+    {
+        std::cout << std::filesystem::path(file).filename() << " size: " << HumanReadable{std::filesystem::file_size(file)} << '\n';
+    }
+    catch (std::filesystem::filesystem_error &e)
+    {
+        std::cout << e.what() << '\n';
+    }
+}
+
+/**
+ * @brief Filesystem::getFileSize
+ *
+ * @param file
+ * @return std::uintmax_t
+ */
+std::uintmax_t Filesystem::getFileSize(const std::filesystem::path &file)
+{
+    return std::filesystem::file_size(file);
 }
 
 /**

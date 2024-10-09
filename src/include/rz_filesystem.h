@@ -15,6 +15,7 @@
 #include <format>
 #include <iostream>
 #include <chrono>
+#include <cmath>
 
 /**
  * @brief The Filesystem class
@@ -44,11 +45,16 @@ public:
   bool copyFilesRecursive(const std::filesystem::path &src,
                           const std::filesystem::path &dest) noexcept;
   bool isFile(const std::filesystem::path &p);
+
+  void showFileSizeHuman(const std::filesystem::path &file) noexcept;
+
   std::string getFilePermission(const std::filesystem::path &file);
   std::string getLastWriteTime(const std::filesystem::path &file);
+  std::uintmax_t getFileSize(const std::filesystem::path &file);
 
   // mixed
-  std::string getAbsolutePath(const std::filesystem::path &p);
+  std::string
+  getAbsolutePath(const std::filesystem::path &p);
   std::string getRelativePath(const std::filesystem::path &basePath, const std::filesystem::path &absolutePath);
 
   std::uintmax_t getDiskCapacity(std::string const &fs);
@@ -73,5 +79,24 @@ private:
     std::string others_read{"-"};
     std::string others_write{'-'};
     std::string others_execute{'-'};
+  };
+
+  struct HumanReadable
+  {
+    std::uintmax_t size{};
+
+    template <typename Os>
+    friend Os &operator<<(Os &os, HumanReadable hr)
+    {
+      int i{};
+      double mantissa = hr.size;
+      for (; mantissa >= 1024.; ++i)
+      {
+        mantissa /= 1024.;
+      }
+      mantissa = std::ceil(mantissa * 10.) / 10.;
+      os << mantissa << "BKMGTPE"[i];
+      return i == 0 ? os : os << "B (" << hr.size << ')';
+    }
   };
 };

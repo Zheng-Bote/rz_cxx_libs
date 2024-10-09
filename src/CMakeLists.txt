@@ -31,7 +31,7 @@ configure_file("${CMAKE_SOURCE_DIR}/configure/rz_config.h.in" configured/rz_conf
 #add_library(rz_filesystem "${CMAKE_SOURCE_DIR}/include/rz_filesystem.h")
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/configure")
 
-set(SRC_LIST main.cpp include/rz_filesystem.cpp include/rz_datetime.cpp)
+set(SRC_LIST main.cpp include/rz_filesystem.cpp include/rz_datetime.cpp include/rz_cxx_features.h)
 add_executable(test_libs ${SRC_LIST})
 #add_executable(test_libs main.cpp "${CMAKE_SOURCE_DIR}/include/rz_filesystem.cpp")
 

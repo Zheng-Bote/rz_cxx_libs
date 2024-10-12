@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
     //  std::cout << "perm: " << fs.getFilePermission("./qt_filesystem") << std::endl;
     //  std::cout << "last write time UTC: " << fs.getLastWriteTime("./test_libs") << std::endl;
     //  fs.getFileSizeHuman("./test_libs");
-    // DateTime dt;
+    DateTime dt;
     // std::cout << "main UTC sys: " << dt.getUtcDateTimeSys() << std::endl;
     // std::cout << "main UTC human: " << dt.getUtcDateTimeHuman() << std::endl;
     // std::cout << "main local sys: " << dt.getLocalTimeSys() << std::endl;
@@ -67,11 +67,9 @@ int main(int argc, char *argv[])
     // std::cout << "current TZ: " << dt.getCurrentZoneOffset() << std::endl;
 
     std::cout << "###################\n";
-
-    if (cxx_features::print.cxx20 && cxx_features::print.core_features)
-        cxx_features::show("C++20 CORE", cxx_features::cxx20);
-
-    // std::cout << "This code is compiled with G++ version: " << __GNUC__ << "." << __GNUC_MINOR__ << "." << __GNUC_PATCHLEVEL__ << std::endl;
+    dt.showAllTimezones();
+    std::string place = "Berlin";
+    dt.findTimezone(place);
     std::cout << "###################\n";
 
     EXIT_SUCCESS;

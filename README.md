@@ -1,7 +1,7 @@
 <div id="top" align="center">
 <h1>cxx_libs</h1>
 
-<p>C++ libraries, mostly c++20</p>
+<p>C++ libraries, mostly &ge; c++20 and sometimes Qt6</p>
 
 [Report Issue](https://github.com/Zheng-Bote/cxx_libs/issues) [Request Feature](https://github.com/Zheng-Bote/cxx_libs/pulls)
 
@@ -14,10 +14,11 @@
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 **Table of Contents**
 
 - [Description](#description)
-    - [Features](#features)
+  - [Features](#features)
   - [Status](#status)
     - [Application / Tool](#application--tool)
     - [Documentation](#documentation)
@@ -132,6 +133,7 @@ bla bla ... with a little help from my friends
 ## folder structure
 
 <!-- readme-tree start -->
+
 ```
 .
 ├── .github
@@ -173,6 +175,7 @@ bla bla ... with a little help from my friends
 
 8 directories, 28 files
 ```
+
 <!-- readme-tree end -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>

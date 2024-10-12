@@ -133,7 +133,6 @@ bla bla ... with a little help from my friends
 ## folder structure
 
 <!-- readme-tree start -->
-
 ```
 .
 ├── .github
@@ -168,14 +167,18 @@ bla bla ... with a little help from my friends
 │   │   ├── extra_headers
 │   │   └── rz_config.h.in
 │   ├── include
+│   │   ├── rz_cxx_features.h
+│   │   ├── rz_datetime.cpp
+│   │   ├── rz_datetime.h
 │   │   ├── rz_filesystem.cpp
-│   │   └── rz_filesystem.h
+│   │   ├── rz_filesystem.h
+│   │   ├── rz_qt_image.cpp
+│   │   └── rz_qt_image.h
 │   └── main.cpp
 └── tree.bak
 
-8 directories, 28 files
+8 directories, 33 files
 ```
-
 <!-- readme-tree end -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>

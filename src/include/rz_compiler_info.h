@@ -1,6 +1,6 @@
 /**
  * @file rz_compiler_info.h
- * @author ZHENGH Bote (https://github.com/PacktPublishing/Modern-Cpp-Programming-Cookbook-Third-Edition)
+ * @author ZHENG Bote (https://github.com/PacktPublishing/Modern-Cpp-Programming-Cookbook-Third-Edition)
  * @brief header-only; show Compiler and CPU architecture
  * @version 0.1.0
  * @date 2024-10-13

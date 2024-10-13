@@ -1,7 +1,7 @@
 /**
  * @file rz_cxx_features.h
  * @author ZHENG Bote (robert.hase-zheng.net), cppreference.com
- * @brief CXX lib to check c++ features
+ * @brief header-only CXX lib to check c++ features
  * @version 0.1.0
  * @date 2024-10-05
  *

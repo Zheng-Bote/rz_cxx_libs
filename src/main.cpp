@@ -14,11 +14,13 @@
 #include <fstream>
 // #include <gsl/gsl>
 #include <iostream>
+#include <print>
 
 #include "configured/rz_config.h"
 #include "include/rz_filesystem.h"
 #include "include/rz_datetime.h"
 #include "include/rz_cxx_features.h"
+#include "include/rz_string_lib.h"
 
 /**
  * @brief main
@@ -67,9 +69,10 @@ int main(int argc, char *argv[])
     // std::cout << "current TZ: " << dt.getCurrentZoneOffset() << std::endl;
 
     std::cout << "###################\n";
-    dt.showAllTimezones();
+    // dt.showAllTimezones();
     std::string place = "Berlin";
-    dt.findTimezone(place);
+    std::println("{}", dt.findTimezoneTime(place));
+
     std::cout << "###################\n";
 
     EXIT_SUCCESS;

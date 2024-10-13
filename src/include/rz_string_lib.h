@@ -67,6 +67,13 @@ namespace rz_string_lib
       text = text.substr(0, last + 1);
     }
 
+    template <typename CharT>
+    bool is_valid_format(tstring<CharT> const &pattern, tstring<CharT> const &text)
+    {
+      auto rx = std::basic_regex<CharT>{pattern, std::regex_constants::icase};
+      return std::regex_match(text, rx);
+    }
+
     bool is_valid_email_format(std::string const &email)
     {
       using namespace std::string_literals;
@@ -83,6 +90,13 @@ namespace rz_string_lib
 
   // ----------
 
+  /**
+   * @brief rz_string_lib::to_upper
+   *
+   * @tparam CharT
+   * @param text
+   * @return tstring<CharT>
+   */
   template <typename CharT>
   inline tstring<CharT> to_upper(tstring<CharT> text)
   {
@@ -211,6 +225,7 @@ namespace rz_string_lib
   template <typename CharT>
   bool is_valid_format(tstring<CharT> const &pattern, tstring<CharT> const &text)
   {
+    using namespace std::string_literals;
     auto rx = std::basic_regex<CharT>{pattern, std::regex_constants::icase};
     return std::regex_match(text, rx);
   }

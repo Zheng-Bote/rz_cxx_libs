@@ -9,6 +9,8 @@
  *
  */
 
+// https://en.cppreference.com/w/cpp/chrono/duration/formatter
+
 #include "rz_datetime.h"
 
 /**
@@ -110,14 +112,15 @@ void DateTime::showAllTimezones()
   }
 }
 
-// TODO: cleanup ret
 /**
- * @brief DateTime::findTimezone
+ * @brief DateTime::findTimezoneTime
  *
- * @param endName (eg: Paris)
+ * @param endName (eg: London)
+ * @return std::string
  */
-void DateTime::findTimezone(const std::string &endName)
+std::string DateTime::findTimezoneTime(const std::string &endName)
 {
+  std::string ret{""};
   const std::chrono::tzdb &tzdb{std::chrono::get_tzdb()};
   const std::vector<std::chrono::time_zone> &tzs{tzdb.zones};
   const auto &res{std::find_if(tzs.begin(), tzs.end(), [&endName](const std::chrono::time_zone &tz)
@@ -132,11 +135,14 @@ void DateTime::findTimezone(const std::string &endName)
       const std::string_view myLocation{res->name()};
       const std::chrono::time_point now{std::chrono::system_clock::now()};
       const std::chrono::zoned_time zt_1{myLocation, now};
-      std::cout << myLocation << ": " << zt_1 << '\n';
+      // std::cout << myLocation << ": " << zt_1 << '\n';
+      ret = std::format("{} {:%Y-%m-%d %H:%M}", myLocation, zt_1);
+      // std::cout << "format: " << erg << std::endl;
     }
     catch (const std::runtime_error &e)
     {
       std::cout << e.what() << '\n';
     }
   }
+  return ret;
 }

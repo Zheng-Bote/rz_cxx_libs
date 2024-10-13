@@ -33,5 +33,5 @@ public:
   std::string getCurrentZoneOffset();
 
   void showAllTimezones();
-  void findTimezone(const std::string &endName = "Paris");
+  std::string findTimezoneTime(const std::string &endName = "Paris");
 };

@@ -14,10 +14,11 @@
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 **Table of Contents**
 
 - [Description](#description)
-    - [Features](#features)
+  - [Features](#features)
   - [Status](#status)
     - [Application / Tool](#application--tool)
     - [Documentation](#documentation)
@@ -56,7 +57,7 @@
 ![QT](https://img.shields.io/badge/Community-6-41CD52?logo=qt)
 ![CXX](https://img.shields.io/badge/C++-20-blue?logo=cplusplus)
 
-C++20 libraries and some Github workflows and Github actions.
+C++ libraries, mostly &ge; c++20 and sometimes Qt6.
 
 ### Features
 
@@ -72,14 +73,16 @@ C++20 libraries and some Github workflows and Github actions.
 
 - \[x] some more or less usefull Github Actions for GH-repo, GH-pages, GH-wiki, CI/CD-Pipelines
 - \[ ] Packagemanager
-- \[ ] Installation routine
+- \[x] Buildsystem: CMake
+- \[x] Clang-Tidy (cppcoreguidelines-\*)
+- \[ ] Installer: CMake
 - \[ ] portable application
 
 <br>
 
 - \[ ] runs on DOS/Windows
 - \[ ] runs on MacOS
-- \[ ] runs on Linux
+- \[x] runs on Linux
 - \[ ] runs on iOS
 - \[ ] runs on Android
 - \[ ] runs on HarmonyOS
@@ -90,7 +93,7 @@ C++20 libraries and some Github workflows and Github actions.
 
 ### Application / Tool
 
-![Status](https://img.shields.io/badge/Status-under_construction-red)
+![Status](https://img.shields.io/badge/Status-useable-green)
 
 ![GitHub Release Date](https://img.shields.io/github/release-date/Zheng-Bote/cxx_libs)
 
@@ -99,7 +102,7 @@ C++20 libraries and some Github workflows and Github actions.
 
 ### Documentation
 
-_see also:_ [Application Documentation](#documentation)
+_under construction_
 
 #### README
 
@@ -123,15 +126,21 @@ create ToC in Markdown files in folders
 
 # Installation
 
-bla bla ... everything easy and green with No Code/Low code and without any costs
+```Shell
+mkdir build && cd build
+cmake -S ../src -B . -DCMAKE_BUILD_TYPE=Release
+cmake --build . --parallel 6
+...
+```
 
 ## Dependencies
 
-bla bla ... with a little help from my friends
+_under construction_
 
 ## folder structure
 
 <!-- readme-tree start -->
+
 ```
 .
 ├── .github
@@ -178,160 +187,26 @@ bla bla ... with a little help from my friends
 
 8 directories, 33 files
 ```
+
 <!-- readme-tree end -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Usage/Examples/Tests
 
-bla bla ... usage is intuitive and runs mostly automatically with no needs of any knowledge
-
-```HTML
-<mark> under construction </mark>
-```
+_under construction_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 # API Reference
 
-<hr>
-
-![GHA](https://img.shields.io/badge/Github-Action-black?logo=githubactions)
-
-_Inputs/Outputs will be filled automatically by `.github/workflows/repo-actions_docu.yml`_
-
-## Inputs
-
-## Outputs
-
-<hr>
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-## Parameters
-
-**Workflow or program**
-
-| Parameter    | Type     | Description                          |
-| :----------- | :------- | :----------------------------------- |
-| `name`       | `string` | _Optional_ name-of-copyright-holder  |
-| `created`    | `string` | _Optional_ <YYYY>                    |
-| `version`    | `string` | _Optional_ \<v0.0.0>                 |
-| `link_left`  | `string` | _Optional_ link-to-contact-page      |
-| `link_right` | `string` | _Optional_ link-to-legal-notice-page |
+_under construction_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 # Documentation
 
-see also: <https://linktodocumentation>
-
-## Architecture
-
-### Github
-
-#### Github Repo
-
-```mermaid
-block-beta
-  columns 4
-  Repo:4
-  block:group1:1
-    columns 1
-    id0[".github"]
-    block:group2:1
-      columns 1
-      id1[["workflows"]]
-      id2[["actions"]]
-    end
-  end
-  docs dist src
-  block:group3:4
-    %% columns auto (default)
-    A["gh-pages"] B["gh-wiki"]
-  end
-```
-
-#### Github Actions / Workflows
-
-```mermaid
-flowchart TD;
-    A[Workflow]-. parameter .->B[[callable Workflow]]
-    B-- parameter -->C[Action]
-    C-->D(README)
-
-    A[Workflow]-. parameter .->E[[callable Workflow]]
-    E-- parameter -->F[Action]
-    F-->J(Markdown files)
-
-    A[Workflow]-->K[[Workflow]]
-    K-->L[Action]
-    L-->M("GH-Pages")
-
-    A[Workflow]-->N[[Workflow]]
-    N-->O[Action]
-    O-->P("GH-Wiki")
-```
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-## Application
-
-```mermaid
-architecture-beta
-    group api(cloud)[API]
-
-    service db(database)[Database] in api
-    service server0(server)[Webserver] in api
-    service disk2(disk)[Storage] in api
-    service server(server)[Appserver] in api
-
-    db:L -- R:server
-    server0:T -- B:server
-    disk2:T -- B:server
-```
-
-## DevOps
-
-```mermaid
-pie title me
-         "ideas" : 90
-         "time for realizations" : 7
-         "money for realizations" : 3
-```
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-## Github Page
-
-[![GH-Page](https://img.shields.io/badge/Github-Pages-black?logo=github)](https://www.github.com/Zheng-Bote)
-
-## Github Wiki
-
-[![GH-Wiki](https://img.shields.io/badge/Github-Wiki-black?logo=github)](https://www.github.com/Zheng-Bote)
-
-## Comments
-
-> \[!NOTE]
-> Useful information that users should know, even when skimming content.
-
-> \[!TIP]
-> Helpful advice for doing things better or more easily.
-
-> \[!IMPORTANT]
-> Key information users need to know to achieve their goal.
-
-> \[!WARNING]
-> Urgent info that needs immediate user attention to avoid problems.
-
-> \[!CAUTION]
-> Advises about risks or negative outcomes of certain actions.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-## Screenshots
-
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+_under construction_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

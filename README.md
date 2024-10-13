@@ -140,7 +140,6 @@ _under construction_
 ## folder structure
 
 <!-- readme-tree start -->
-
 ```
 .
 ├── .github
@@ -175,19 +174,20 @@ _under construction_
 │   │   ├── extra_headers
 │   │   └── rz_config.h.in
 │   ├── include
+│   │   ├── rz_compiler_info.h
 │   │   ├── rz_cxx_features.h
 │   │   ├── rz_datetime.cpp
 │   │   ├── rz_datetime.h
 │   │   ├── rz_filesystem.cpp
 │   │   ├── rz_filesystem.h
 │   │   ├── rz_qt_image.cpp
-│   │   └── rz_qt_image.h
+│   │   ├── rz_qt_image.h
+│   │   └── rz_string_lib.h
 │   └── main.cpp
 └── tree.bak
 
-8 directories, 33 files
+8 directories, 35 files
 ```
-
 <!-- readme-tree end -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>

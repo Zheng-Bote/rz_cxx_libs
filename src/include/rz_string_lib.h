@@ -64,17 +64,21 @@ namespace rz_string_lib
       auto last{text.find_last_not_of(' ')};
       text = text.substr(0, last + 1);
     }
+
+    bool is_valid_email_format(std::string const &email)
+    {
+      auto rx = std::regex{R"(^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$)"s, std::regex_constants::icase};
+      return std::regex_match(email, rx);
+    }
+
+    bool is_valid_email_format_w(std::wstring const &text)
+    {
+      return is_valid_format(LR"(^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$)"s, text);
+    }
   }
 
   // ----------
 
-  /**
-   * @brief rz_string_lib::to_upper
-   *
-   * @tparam CharT
-   * @param text
-   * @return tstring<CharT>
-   */
   template <typename CharT>
   inline tstring<CharT> to_upper(tstring<CharT> text)
   {
@@ -189,5 +193,46 @@ namespace rz_string_lib
     }
 
     return tokens;
+  }
+
+  /**
+   * @brief rz_string_lib::is_valid_format
+   *
+   * @tparam CharT
+   * @param pattern
+   * @param text
+   * @return true
+   * @return false
+   */
+  template <typename CharT>
+  bool is_valid_format(tstring<CharT> const &pattern, tstring<CharT> const &text)
+  {
+    auto rx = std::basic_regex<CharT>{pattern, std::regex_constants::icase};
+    return std::regex_match(text, rx);
+  }
+
+  /**
+   * @brief rz_string_lib::is_valid_email_format
+   *
+   * @param email
+   * @return true
+   * @return false
+   */
+  bool is_valid_email_format(std::string const &email)
+  {
+    auto rx = std::regex{R"(^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$)"s, std::regex_constants::icase};
+    return std::regex_match(email, rx);
+  }
+
+  /**
+   * @brief rz_string_lib::is_valid_email_format_w
+   *
+   * @param email
+   * @return true
+   * @return false
+   */
+  bool is_valid_email_format_w(std::wstring const &text)
+  {
+    return is_valid_format(LR"(^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$)"s, text);
   }
 }

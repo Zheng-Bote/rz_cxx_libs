@@ -13,6 +13,8 @@
 
 #include <string>
 #include <algorithm>
+#include <regex>
+#include <string>
 
 namespace rz_string_lib
 {
@@ -67,12 +69,14 @@ namespace rz_string_lib
 
     bool is_valid_email_format(std::string const &email)
     {
+      using namespace std::string_literals;
       auto rx = std::regex{R"(^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$)"s, std::regex_constants::icase};
       return std::regex_match(email, rx);
     }
 
     bool is_valid_email_format_w(std::wstring const &text)
     {
+      using namespace std::string_literals;
       return is_valid_format(LR"(^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$)"s, text);
     }
   }
@@ -220,6 +224,7 @@ namespace rz_string_lib
    */
   bool is_valid_email_format(std::string const &email)
   {
+    using namespace std::string_literals;
     auto rx = std::regex{R"(^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$)"s, std::regex_constants::icase};
     return std::regex_match(email, rx);
   }
@@ -233,6 +238,7 @@ namespace rz_string_lib
    */
   bool is_valid_email_format_w(std::wstring const &text)
   {
+    using namespace std::string_literals;
     return is_valid_format(LR"(^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$)"s, text);
   }
 }

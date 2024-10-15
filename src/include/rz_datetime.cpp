@@ -2,7 +2,7 @@
  * @file rz_datetime.cpp
  * @author ZHENG Bote (robert.hase-zheng.net)
  * @brief CXX20 datetime lib
- * @version 2.0.0
+ * @version 2.1.0
  * @date 2023-03-25
  *
  * @copyright Copyright (c) 2023 ZHENG Robert
@@ -48,6 +48,47 @@ std::string DateTime::getUtcDateTimeHuman()
 }
 
 /**
+ * @brief DateTime::getFormatedUtcDateTimeHuman
+ *
+ * @param format (eg: YYYY, YYYY-MM-DD, YYYY-MM-DD_HH-MM, YYYY-MM-DD_HH-MM-SS, HH-MM, HH-MM-SS)
+ * @return std::string
+ */
+std::string DateTime::getFormatedUtcDateTimeHuman(const std::string &format)
+{
+  using std::chrono::floor;
+
+  auto epoch = std::chrono::utc_clock::now();
+  auto humanTime = floor<std::chrono::seconds>(epoch);
+  std::string ret{std::format("{0:%F} {0:%T}", humanTime)};
+
+  if (format.compare("YYYY") == 0)
+  {
+    return std::format("{0:%Y}", humanTime);
+  }
+  if (format.compare("YYYY-MM-DD") == 0)
+  {
+    return std::format("{0:%Y-%m-%d}", humanTime);
+  }
+  if (format.compare("YYYY-MM-DD_HH-MM") == 0)
+  {
+    return std::format("{0:%Y-%m-%d_%H-%M}", humanTime);
+  }
+  if (format.compare("YYYY-MM-DD_HH-MM-SS") == 0)
+  {
+    return std::format("{0:%Y-%m-%d_%H-%M-%S}", humanTime);
+  }
+  if (format.compare("HH-MM") == 0)
+  {
+    return std::format("{0:%H-%M}", humanTime);
+  }
+  if (format.compare("HH-MM-SS") == 0)
+  {
+    return std::format("{0:%H-%M-%S}", humanTime);
+  }
+  return ret;
+}
+
+/**
  * @brief DateTime::getLocalTime
  *
  * @return std::string (eg: 2024-10-09T12:29+0200)
@@ -77,6 +118,47 @@ std::string DateTime::getLocalTimeHuman()
   auto humanTime = floor<std::chrono::seconds>(localTime.get_local_time());
 
   return std::format("{0:%F} {0:%T}", humanTime);
+}
+
+/**
+ * @brief DateTime::getFormatedLocalDateTimeHuman
+ *
+ * @param format (eg: YYYY, YYYY-MM-DD, YYYY-MM-DD_HH-MM, YYYY-MM-DD_HH-MM-SS, HH-MM, HH-MM-SS)
+ * @return std::string
+ */
+std::string DateTime::getFormatedLocalDateTimeHuman(const std::string &format)
+{
+  using std::chrono::floor;
+
+  auto epoch = std::chrono::utc_clock::now();
+  auto humanTime = floor<std::chrono::seconds>(epoch);
+  std::string ret{std::format("{0:%F} {0:%T}", humanTime)};
+
+  if (format.compare("YYYY") == 0)
+  {
+    return std::format("{0:%Y}", humanTime);
+  }
+  if (format.compare("YYYY-MM-DD") == 0)
+  {
+    return std::format("{0:%Y-%m-%d}", humanTime);
+  }
+  if (format.compare("YYYY-MM-DD_HH-MM") == 0)
+  {
+    return std::format("{0:%Y-%m-%d_%H-%M}", humanTime);
+  }
+  if (format.compare("YYYY-MM-DD_HH-MM-SS") == 0)
+  {
+    return std::format("{0:%Y-%m-%d_%H-%M-%S}", humanTime);
+  }
+  if (format.compare("HH-MM") == 0)
+  {
+    return std::format("{0:%H-%M}", humanTime);
+  }
+  if (format.compare("HH-MM-SS") == 0)
+  {
+    return std::format("{0:%H-%M-%S}", humanTime);
+  }
+  return ret;
 }
 
 /**

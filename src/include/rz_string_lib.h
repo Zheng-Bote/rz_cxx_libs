@@ -14,7 +14,6 @@
 #include <string>
 #include <algorithm>
 #include <regex>
-#include <string>
 
 namespace rz_string_lib
 {

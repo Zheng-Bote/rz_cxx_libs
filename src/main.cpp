@@ -69,9 +69,8 @@ int main(int argc, char *argv[])
     // std::cout << "current TZ: " << dt.getCurrentZoneOffset() << std::endl;
 
     std::cout << "###################\n";
-    // dt.showAllTimezones();
-    std::string place = "Berlin";
-    std::println("{}", dt.findTimezoneTime(place));
+
+    std::println("{}", dt.getFormatedUtcDateTimeHuman("YYYY-MM-DD_HH-MM-SS"));
 
     std::cout << "###################\n";
 

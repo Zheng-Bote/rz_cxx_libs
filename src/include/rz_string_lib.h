@@ -2,7 +2,7 @@
  * @file rz_string_lib.h
  * @author ZHENGH Bote (https://github.com/PacktPublishing/Modern-Cpp-Programming-Cookbook-Third-Edition)
  * @brief header-only; some string functions
- * @version 0.1.0
+ * @version 0.2.0
  * @date 2024-10-13
  *
  * @copyright Copyright (c) 2024 PacktPub
@@ -187,6 +187,25 @@ namespace rz_string_lib
     auto start = std::remove_if(std::begin(text), std::end(text), [=](CharT const c)
                                 { return c == ch; });
     text.erase(start, std::end(text));
+    return text;
+  }
+
+  /**
+   * @brief std::string replace
+   *
+   * @param text
+   * @param replaceWhat
+   * @param replaceWith
+   * @return std::string
+   */
+  inline std::string replace(std::string text, std::string replaceWhat, std::string replaceWith)
+  {
+    auto position = text.find(replaceWhat);
+    while (position != std::string::npos)
+    {
+      text.replace(position, replaceWhat.size(), replaceWith);
+      position = text.find(replaceWhat, position + replaceWhat.size());
+    }
     return text;
   }
 

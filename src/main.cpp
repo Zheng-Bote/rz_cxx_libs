@@ -71,6 +71,7 @@ int main(int argc, char *argv[])
     std::cout << "###################\n";
 
     std::println("{}", dt.getFormatedUtcDateTimeHuman("YYYY-MM-DD_HH-MM-SS"));
+    std::println("{}", rz_string_lib::replace("/var/log/{{ DATE_TIME }}_dev.log", "{{ DATE_TIME }}", "2024-01-15_1433"));
 
     std::cout << "###################\n";
 

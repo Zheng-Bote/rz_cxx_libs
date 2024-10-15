@@ -31,7 +31,7 @@ public:
 
   std::string getLocalTimeSys();
   std::string getLocalTimeHuman();
-  std::string DateTime::getFormatedLocalDateTimeHuman(const std::string &format = "YYYY-MM-DD_HH-MM");
+  std::string getFormatedLocalDateTimeHuman(const std::string &format = "YYYY-MM-DD_HH-MM");
 
   std::string getCurrentZoneOffset();
 

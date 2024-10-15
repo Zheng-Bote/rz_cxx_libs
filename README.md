@@ -14,11 +14,10 @@
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
 **Table of Contents**
 
 - [Description](#description)
-  - [Features](#features)
+    - [Features](#features)
   - [Status](#status)
     - [Application / Tool](#application--tool)
     - [Documentation](#documentation)
@@ -29,20 +28,7 @@
   - [folder structure](#folder-structure)
   - [Usage/Examples/Tests](#usageexamplestests)
 - [API Reference](#api-reference)
-  - [Inputs](#inputs)
-  - [Outputs](#outputs)
-  - [Parameters](#parameters)
 - [Documentation](#documentation-1)
-  - [Architecture](#architecture)
-    - [Github](#github)
-      - [Github Repo](#github-repo)
-      - [Github Actions / Workflows](#github-actions--workflows)
-  - [Application](#application)
-  - [DevOps](#devops)
-  - [Github Page](#github-page)
-  - [Github Wiki](#github-wiki)
-  - [Comments](#comments)
-  - [Screenshots](#screenshots)
 - [Authors and License](#authors-and-license)
   - [License](#license)
   - [Authors](#authors)
@@ -140,7 +126,6 @@ _under construction_
 ## folder structure
 
 <!-- readme-tree start -->
-
 ```
 .
 ├── .github
@@ -175,19 +160,20 @@ _under construction_
 │   │   ├── extra_headers
 │   │   └── rz_config.h.in
 │   ├── include
+│   │   ├── rz_compiler_info.h
 │   │   ├── rz_cxx_features.h
 │   │   ├── rz_datetime.cpp
 │   │   ├── rz_datetime.h
 │   │   ├── rz_filesystem.cpp
 │   │   ├── rz_filesystem.h
 │   │   ├── rz_qt_image.cpp
-│   │   └── rz_qt_image.h
+│   │   ├── rz_qt_image.h
+│   │   └── rz_string_lib.h
 │   └── main.cpp
 └── tree.bak
 
-8 directories, 33 files
+8 directories, 35 files
 ```
-
 <!-- readme-tree end -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>

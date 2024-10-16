@@ -210,7 +210,7 @@ namespace rz_string_lib
   }
 
   /**
-   * @brief rz_string_lib::spit
+   * @brief rz_string_lib::split
    *
    * @tparam CharT
    * @param text

@@ -21,6 +21,7 @@
 #include "include/rz_datetime.h"
 #include "include/rz_cxx_features.h"
 #include "include/rz_string_lib.h"
+#include "include/rz_readdir.h"
 
 /**
  * @brief main

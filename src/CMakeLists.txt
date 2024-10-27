@@ -38,7 +38,7 @@ configure_file("${CMAKE_SOURCE_DIR}/configure/rz_config.h.in" configured/rz_conf
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/configure")
 
-set(SRC_LIST main.cpp include/rz_filesystem.cpp include/rz_datetime.cpp include/rz_cxx_features.h include/rz_compiler_info.h include/rz_string_lib.h)
+set(SRC_LIST main.cpp include/rz_filesystem.cpp include/rz_datetime.cpp include/rz_cxx_features.h include/rz_compiler_info.h include/rz_string_lib.h include/qaesencryption.cpp include/qaesencryption.h include/simplecrypt.cpp include/simplecrypt.h)
 
 if(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
   set(CMAKE_CXX_FLAGS "${CXX_FLAGS_DEBUG} ${CXX_FLAGS_ALL}")

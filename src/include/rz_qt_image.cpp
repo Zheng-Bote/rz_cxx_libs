@@ -19,6 +19,79 @@ Img::Img()
 {
 }
 
+// TODOS
+// path / file separation
+bool Img::rotateImage(conts QString &pathToSrcFile, const int &turn)
+{
+
+  QString imgIn = imgStruct.abolutePath + "/" + imgStruct.fileBasename + "." + imgStruct.completeSuffix;
+  qDebug() << "rotateImage: " << imgIn;
+
+  backupOrigFile();
+
+  QImage pix(imgIn);
+  QImage pix_rotated = pix.transformed(QTransform().rotate(turn), Qt::SmoothTransformation);
+  if (!pix_rotated.save(imgIn, nullptr, 100))
+  {
+    std::cerr << "rotateImage failed: " << imgIn.toStdString();
+    return false;
+  }
+  else
+  {
+    std::cerr << "rotateImage successfully: " << imgIn.toStdString();
+  }
+
+  return true;
+}
+
+// TODOS
+// path & src file
+// reduced copy
+// target format
+// target quality
+bool Img::convertImage(const QString &pathToSrcFile, const QString &convertTo, const int targetSize)
+{
+  QString imgIn = imgStruct.abolutePath + "/" + imgStruct.fileBasename + "." + imgStruct.completeSuffix;
+  QString imgOutName = imgStruct.fileBasename + "__" + QString::number(targetSize) + "." + imgStruct.newSuffix;
+  QString imgOut = imgStruct.abolutePath + "/" + imgStruct.newFolder;
+  imgOut = imgOut + "/" + imgOutName;
+  QImage imageInput{imgIn};
+
+  if (!checkImgWidth(imageInput, targetSize))
+  {
+    qDebug() << "img is < " << targetSize;
+    // well, the confused exit gate
+    return true;
+  }
+
+  if (checkImgTargetExists(imgOut))
+  {
+    qDebug() << "target exists: " << imgOut.toStdString();
+    // well, the confused exit gate
+    return true;
+  }
+  else
+  {
+    qDebug() << "target doesn't exists: " << imgOut.toStdString();
+    if (!createWebpPath())
+    {
+      std::cerr << "convertImage failed to create webp folder: " << imgOut.toStdString();
+      return false;
+    }
+  }
+
+  QImage reducedCopy{":/images/reduced_copy.png"};
+  QImage imageOutput = imageInput.scaledToWidth(targetSize, Qt::SmoothTransformation);
+  QPainter painter(&imageOutput);
+  painter.drawImage(0, 0, reducedCopy);
+  if (!imageOutput.save(imgOut, "WEBP", 75))
+  {
+    std::cerr << "convertImage failed to save webp image: " << imgOut.toStdString();
+    return false;
+  }
+  return true;
+}
+
 /**
  * @brief Img::scaledToWidth
  *

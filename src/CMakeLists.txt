@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.23)
 
 project(
   test_libs
-  VERSION 2.0.0
+  VERSION 2.0.1
   DESCRIPTION "CXX23 console app to test rz_cxx_libs"
   HOMEPAGE_URL "https://github.com/Zheng-Bote/rz_cxx_libs"
   LANGUAGES CXX)
@@ -17,9 +17,9 @@ project(
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_COMPILER clang++)
+#set(CMAKE_CXX_COMPILER clang++)
 
-set(CMAKE_CXX_CLANG_TIDY clang-tidy;  -header-filter=.; -checks=cppcoreguidelines-*)
+#set(CMAKE_CXX_CLANG_TIDY clang-tidy;  -header-filter=.; -checks=cppcoreguidelines-*)
 
 set(CXX_FLAGS_ALL "-m64 -Wall -Wextra -Wpedantic -Wshadow -Wconversion")
 set(CXX_FLAGS_DEBUG "-g3 -O0")
@@ -38,7 +38,7 @@ configure_file("${CMAKE_SOURCE_DIR}/configure/rz_config.h.in" configured/rz_conf
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/configure")
 
-set(SRC_LIST main.cpp include/rz_filesystem.cpp include/rz_datetime.cpp include/rz_cxx_features.h include/rz_compiler_info.h include/rz_string_lib.h include/qaesencryption.cpp include/qaesencryption.h include/simplecrypt.cpp include/simplecrypt.h)
+set(SRC_LIST main.cpp include/rz_filesystem.cpp include/rz_datetime.cpp include/rz_cxx_features.h include/rz_compiler_info.h include/rz_string_lib.h )
 
 if(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
   set(CMAKE_CXX_FLAGS "${CXX_FLAGS_DEBUG} ${CXX_FLAGS_ALL}")

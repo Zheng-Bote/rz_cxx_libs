@@ -127,7 +127,6 @@ _under construction_
 ## folder structure
 
 <!-- readme-tree start -->
-
 ```
 .
 ├── .github
@@ -162,21 +161,29 @@ _under construction_
 │   │   ├── extra_headers
 │   │   └── rz_config.h.in
 │   ├── include
+│   │   ├── database.cpp
+│   │   ├── database.hpp
+│   │   ├── qaesencryption.cpp
+│   │   ├── qaesencryption.h
 │   │   ├── rz_compiler_info.h
 │   │   ├── rz_cxx_features.h
 │   │   ├── rz_datetime.cpp
 │   │   ├── rz_datetime.h
 │   │   ├── rz_filesystem.cpp
 │   │   ├── rz_filesystem.h
+│   │   ├── rz_openssl.hpp
 │   │   ├── rz_qt_image.cpp
 │   │   ├── rz_qt_image.h
-│   │   └── rz_string_lib.h
+│   │   ├── rz_string_lib.h
+│   │   ├── simplecrypt.cpp
+│   │   ├── simplecrypt.h
+│   │   ├── sqlite3.cpp
+│   │   └── sqlite3.hpp
 │   └── main.cpp
 └── tree.bak
 
-8 directories, 35 files
+9 directories, 44 files
 ```
-
 <!-- readme-tree end -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>

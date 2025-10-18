@@ -23,6 +23,9 @@
 #include "include/rz_string_lib.h"
 //#include "include/rz_readdir.h"
 
+#include <QCoreApplication>
+#include "include/sqlite3.hpp"
+
 /**
  * @brief main
  * @param argc
@@ -75,6 +78,19 @@ int main(int argc, char *argv[])
     std::println("{}", rz_string_lib::replace("/var/log/{{ DATE_TIME }}_dev.log", "{{ DATE_TIME }}", "2024-01-15_1433"));
 
     std::cout << "###################\n";
+
+    QCoreApplication a(argc, argv);
+    SQLite3 myDb;
+
+    QString testDb = "test.db";
+    myDb.openDb(testDb);
+
+    myDb.createTable();
+    myDb.insertData();
+    myDb.selectData();
+    myDb.selectDataWithField();
+
+    myDb.closeDb();
 
     EXIT_SUCCESS;
 }

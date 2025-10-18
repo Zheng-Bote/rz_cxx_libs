@@ -31,6 +31,8 @@ set(PROG_HOMEPAGE "${PROJECT_HOMEPAGE_URL}")
 configure_file("${CMAKE_SOURCE_DIR}/configure/rz_config.h.in" configured/rz_config.h)
 
 
+find_package(Qt6 6.5 REQUIRED COMPONENTS Core Sql)
+
 #find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
 #find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 
@@ -38,7 +40,15 @@ configure_file("${CMAKE_SOURCE_DIR}/configure/rz_config.h.in" configured/rz_conf
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/configure")
 
-set(SRC_LIST main.cpp include/rz_filesystem.cpp include/rz_datetime.cpp include/rz_cxx_features.h include/rz_compiler_info.h include/rz_string_lib.h )
+set(SRC_LIST main.cpp
+  include/rz_filesystem.cpp
+  include/rz_datetime.cpp
+  include/rz_cxx_features.h
+  include/rz_compiler_info.h
+  include/rz_string_lib.h
+  include/database.cpp include/database.hpp
+  include/sqlite3.cpp include/database.hpp
+)
 
 if(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
   set(CMAKE_CXX_FLAGS "${CXX_FLAGS_DEBUG} ${CXX_FLAGS_ALL}")
@@ -58,7 +68,8 @@ IF(CMAKE_BUILD_TYPE MATCHES Debug)
   addclangtidy(test_libs)
 ENDIF()
 
-target_link_libraries(${PROJECT_NAME})
+target_link_libraries(${PROJECT_NAME}
+  PRIVATE Qt6::Core Qt6::Sql)
 
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_23)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_BINARY_DIR})

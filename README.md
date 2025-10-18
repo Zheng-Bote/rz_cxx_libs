@@ -14,10 +14,11 @@
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 **Table of Contents**
 
 - [Description](#description)
-    - [Features](#features)
+  - [Features](#features)
   - [Status](#status)
     - [Application / Tool](#application--tool)
     - [Documentation](#documentation)
@@ -126,6 +127,7 @@ _under construction_
 ## folder structure
 
 <!-- readme-tree start -->
+
 ```
 .
 ├── .github
@@ -174,6 +176,7 @@ _under construction_
 
 8 directories, 35 files
 ```
+
 <!-- readme-tree end -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -181,6 +184,64 @@ _under construction_
 ## Usage/Examples/Tests
 
 _under construction_
+
+```code
+    auto temp = std::filesystem::temp_directory_path() / "example.txt";
+    std::ofstream(temp.c_str()) << "Hello, World!";
+    auto ftime = std::filesystem::last_write_time(temp);
+    std::cout << std::format("File write time is {0:%R} on {0:%F}\n", ftime);
+    std::cout << ftime << std::endl;
+    std::filesystem::remove(temp);
+
+    std::cout << PROG_NAME << " v" << PROG_VERSION << " " << PROG_HOMEPAGE << "\n"
+              << std::endl;
+
+    Filesystem fs;
+    fs->createDirectory("/tmp/test");
+    std::filesystem::path temp_dir = std::filesystem::temp_directory_path();
+    fs.createDirectories(temp_dir.append("test/test1/test2/test3"));
+    fs->removeDirectory("/tmp/test/test1/test2");
+    fs->removeDirectories("/tmp/test");
+    fs.listDirectory("/tmp");
+    fs.listDirectories("/tmp", 1);
+    fs.copyFile("qt_filesystem", "/tmp/test/test1/test2/test3/rz__filesystem");
+    fs.copyRecursive(".", "/tmp/test");
+    fs.showDirectoryTree("/tmp/test");
+    fs.isDirectory("/tmp");
+    fs.isFile("qt_filesysteme");
+    fs.getAbsolutePath(".");
+    fs.getRelativePath("/tmp");
+    fs.calculateDirectorySize(".");
+    fs.printDiskSpaceInfo("/home", 20);
+    std::cout << "perm: " << fs.getFilePermission("./qt_filesystem") << std::endl;
+    std::cout << "last write time UTC: " << fs.getLastWriteTime("./test_libs") << std::endl;
+    fs.getFileSizeHuman("./test_libs");
+    DateTime dt;
+    std::cout << "main UTC sys: " << dt.getUtcDateTimeSys() << std::endl;
+    std::cout << "main UTC human: " << dt.getUtcDateTimeHuman() << std::endl;
+    std::cout << "main local sys: " << dt.getLocalTimeSys() << std::endl;
+    std::cout << "main human: " << dt.getLocalTimeHuman() << std::endl;
+    std::cout << "current TZ: " << dt.getCurrentZoneOffset() << std::endl;
+
+    std::cout << "###################\n";
+
+    std::println("{}", dt.getFormatedUtcDateTimeHuman("YYYY-MM-DD_HH-MM-SS"));
+    std::println("{}", rz_string_lib::replace("/var/log/{{ DATE_TIME }}_dev.log", "{{ DATE_TIME }}", "2024-01-15_1433"));
+
+    std::cout << "###################\n";
+
+    // db test
+    QCoreApplication a(argc, argv);
+    SQLite3 myDb;
+    QString testDb = "test.db";
+    myDb.openDb(testDb);
+    myDb.createTable();
+    myDb.insertData();
+    myDb.selectData();
+    myDb.selectDataWithField();
+    myDb.closeDb();
+
+```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

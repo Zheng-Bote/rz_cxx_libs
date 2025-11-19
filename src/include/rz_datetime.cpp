@@ -2,12 +2,14 @@
  * @file rz_datetime.cpp
  * @author ZHENG Bote (robert.hase-zheng.net)
  * @brief CXX20 datetime lib
- * @version 2.1.0
+ * @version 2.2.0
  * @date 2023-03-25
  *
  * @copyright Copyright (c) 2023 ZHENG Robert
  *
  */
+
+// TODOS: clean up
 
 // https://en.cppreference.com/w/cpp/chrono/duration/formatter
 
@@ -159,6 +161,34 @@ std::string DateTime::getFormatedLocalDateTimeHuman(const std::string &format)
     return std::format("{0:%H-%M-%S}", humanTime);
   }
   return ret;
+}
+
+std::string DateTime::getLocalTimeDefault()
+{
+  auto now = std::chrono::system_clock::now();
+  auto time_t_now = std::chrono::system_clock::to_time_t(now);
+  auto local_time = *std::localtime(&time_t_now);
+  return std::format("{:%Y-%m-%d_%H-%M-%S}", std::chrono::system_clock::from_time_t(time_t_now));
+}
+std::string DateTime::getUtcTimeDefault()
+{
+  using namespace std::chrono;
+
+  // Hole jetzt als time_point
+  auto now = system_clock::now();
+
+  // Direkt als UTC formatieren:
+  return std::format("{:%Y-%m-%d_%H-%M-%S}", floor<seconds>(now));
+}
+
+std::string DateTime::getTimeForTimezone(std::string_view timezone)
+{
+  using namespace std::chrono;
+
+  auto now = system_clock::now();
+  zoned_time zt{locate_zone(std::string(timezone)), now};
+
+  return std::format("{}:: {:%Y-%m-%d_%H-%M-%S}", timezone, zt);
 }
 
 /**

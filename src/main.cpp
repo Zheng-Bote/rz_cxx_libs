@@ -21,7 +21,7 @@
 #include "include/rz_datetime.h"
 #include "include/rz_cxx_features.h"
 #include "include/rz_string_lib.h"
-//#include "include/rz_readdir.h"
+// #include "include/rz_readdir.h"
 
 #include <QCoreApplication>
 #include "include/sqlite3.hpp"
@@ -74,10 +74,15 @@ int main(int argc, char *argv[])
 
     std::cout << "###################\n";
 
-    std::println("{}", dt.getFormatedUtcDateTimeHuman("YYYY-MM-DD_HH-MM-SS"));
-    std::println("{}", rz_string_lib::replace("/var/log/{{ DATE_TIME }}_dev.log", "{{ DATE_TIME }}", "2024-01-15_1433"));
+    std::println("getFormatedUtcDateTimeHuman: {}", dt.getFormatedUtcDateTimeHuman("YYYY-MM-DD_HH-MM-SS"));
+    std::println("Log: {}", rz_string_lib::replace("/var/log/{{ DATE_TIME }}_dev.log", "{{ DATE_TIME }}", "2024-01-15_1433"));
+
+    std::println("getLocalTimeDefault: {}", dt.getLocalTimeDefault());
+    std::println("getUtcTimeDefault: {}", dt.getUtcTimeDefault());
+    std::println("getTimeForTimezone (Berlin): {}", dt.getTimeForTimezone("Europe/Berlin"));
 
     std::cout << "###################\n";
+    exit(EXIT_SUCCESS);
 
     QCoreApplication a(argc, argv);
     SQLite3 myDb;

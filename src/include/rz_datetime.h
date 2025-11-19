@@ -2,7 +2,7 @@
  * @file rz_datetime.h
  * @author ZHENG Bote (robert.hase-zheng.net)
  * @brief CXX20 datetime lib
- * @version 2.1.0
+ * @version 2.2.0
  * @date 2023-03-25
  *
  * @copyright Copyright (c) 2023 ZHENG Robert
@@ -32,6 +32,9 @@ public:
   std::string getLocalTimeSys();
   std::string getLocalTimeHuman();
   std::string getFormatedLocalDateTimeHuman(const std::string &format = "YYYY-MM-DD_HH-MM");
+  std::string getLocalTimeDefault();
+  std::string getUtcTimeDefault();
+  std::string getTimeForTimezone(std::string_view timezone);
 
   std::string getCurrentZoneOffset();
 
